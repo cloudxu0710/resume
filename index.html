@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>刘旭｜简历｜浅蓝主题</title>
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --sheet: rgba(255, 252, 246, 0.88);
+      --ink: #171512;
+      --muted: #5f5951;
+      --line: rgba(23, 21, 18, 0.14);
+      --accent: #8b6b3d;
+      --accent-soft: rgba(139, 107, 61, 0.12);
+      --shadow: 0 24px 60px rgba(24, 18, 10, 0.10);
+      --page-bg:
+        radial-gradient(circle at top left, rgba(139, 107, 61, 0.08), transparent 28%),
+        radial-gradient(circle at right 20%, rgba(69, 61, 47, 0.06), transparent 24%),
+        linear-gradient(180deg, #ebe3d6 0%, var(--paper) 100%);
+      --sidebar-bg:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.12)),
+        linear-gradient(180deg, rgba(139, 107, 61, 0.03), transparent 30%);
+      --sheet-highlight:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.55), transparent 28%),
+        linear-gradient(180deg, transparent, rgba(139, 107, 61, 0.03));
+      --grid-opacity: 0.18;
+      --toolbar-bg: rgba(22, 20, 17, 0.84);
+      --toolbar-border: rgba(255, 255, 255, 0.12);
+      --toolbar-text: rgba(255, 250, 242, 0.92);
+      --toolbar-muted: rgba(255, 250, 242, 0.64);
+      --theme-button-bg: rgba(255, 255, 255, 0.08);
+      --theme-button-border: rgba(255, 255, 255, 0.14);
+      --theme-button-active-bg: rgba(255, 255, 255, 0.18);
+      --panel-border: rgba(139, 107, 61, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body[data-theme="pure"] {
+      --paper: #eef0f2;
+      --sheet: #ffffff;
+      --ink: #141414;
+      --muted: #636363;
+      --line: rgba(20, 20, 20, 0.12);
+      --accent: #2b2b2b;
+      --accent-soft: rgba(43, 43, 43, 0.10);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.06);
+      --page-bg:
+        linear-gradient(180deg, #e9ecef 0%, #f3f4f6 100%);
+      --sidebar-bg:
+        linear-gradient(180deg, rgba(248, 248, 248, 0.96), rgba(255, 255, 255, 0.92));
+      --sheet-highlight:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.02));
+      --grid-opacity: 0.04;
+      --toolbar-bg: rgba(18, 18, 18, 0.86);
+      --toolbar-border: rgba(255, 255, 255, 0.12);
+      --toolbar-text: rgba(255, 255, 255, 0.94);
+      --toolbar-muted: rgba(255, 255, 255, 0.64);
+      --theme-button-bg: rgba(255, 255, 255, 0.08);
+      --theme-button-border: rgba(255, 255, 255, 0.14);
+      --theme-button-active-bg: rgba(255, 255, 255, 0.18);
+      --panel-border: rgba(43, 43, 43, 0.18);
+    }
+
+    body[data-theme="blue"] {
+      --paper: #d9e9f6;
+      --sheet: #ffffff;
+      --ink: #10283f;
+      --muted: #557492;
+      --line: rgba(16, 40, 63, 0.14);
+      --accent: #2f5f8f;
+      --accent-soft: rgba(47, 95, 143, 0.14);
+      --shadow: 0 24px 60px rgba(28, 63, 99, 0.16);
+      --page-bg:
+        radial-gradient(circle at top left, rgba(47, 95, 143, 0.14), transparent 28%),
+        radial-gradient(circle at right 20%, rgba(126, 167, 207, 0.18), transparent 24%),
+        linear-gradient(180deg, #bdd6ea 0%, #d9e9f6 100%);
+      --sidebar-bg:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(228, 240, 250, 0.36)),
+        linear-gradient(180deg, rgba(47, 95, 143, 0.08), transparent 30%);
+      --sheet-highlight:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.52), transparent 28%),
+        linear-gradient(180deg, transparent, rgba(47, 95, 143, 0.07));
+      --grid-opacity: 0.12;
+      --toolbar-bg: rgba(18, 35, 52, 0.84);
+      --toolbar-border: rgba(214, 232, 248, 0.24);
+      --toolbar-text: rgba(244, 250, 255, 0.96);
+      --toolbar-muted: rgba(224, 238, 250, 0.72);
+      --theme-button-bg: rgba(244, 250, 255, 0.08);
+      --theme-button-border: rgba(214, 232, 248, 0.18);
+      --theme-button-active-bg: rgba(244, 250, 255, 0.16);
+      --panel-border: rgba(47, 95, 143, 0.20);
+    }
+
+    html {
+      background: var(--page-bg);
+      color: var(--ink);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", sans-serif;
+      line-height: 1.65;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: var(--grid-opacity);
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, black 30%, transparent 100%);
+    }
+
+    .resume {
+      width: min(1180px, calc(100vw - 48px));
+      margin: 28px auto 40px;
+      padding: 18px;
+    }
+
+    .sheet {
+      position: relative;
+      background: var(--sheet);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--sheet-highlight);
+      pointer-events: none;
+    }
+
+    .topbar {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 34px 40px 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .identity {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 52px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Palatino Linotype", "Book Antiqua", "Songti SC", serif;
+      font-size: 54px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .headline {
+      margin-top: 10px;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .summary {
+      margin-top: 20px;
+      max-width: 680px;
+      font-size: 15px;
+      color: #322d27;
+    }
+
+    .contacts {
+      min-width: 220px;
+      padding-top: 8px;
+      text-align: right;
+    }
+
+    .contact-item + .contact-item {
+      margin-top: 12px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .contact-value {
+      margin-top: 3px;
+      font-size: 14px;
+    }
+
+    .body-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 0;
+    }
+
+    .sidebar {
+      position: relative;
+      padding: 34px 28px 38px 40px;
+      border-right: 1px solid var(--line);
+      background:
+        var(--sidebar-bg);
+    }
+
+    .main {
+      padding: 34px 40px 44px;
+    }
+
+    .side-block + .side-block,
+    .section + .section {
+      margin-top: 30px;
+    }
+
+    .section.section-spacious {
+      margin-top: 60px;
+    }
+
+    .section-title,
+    .side-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      font-family: "Palatino Linotype", "Book Antiqua", "Songti SC", serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .section-title::before,
+    .side-title::before {
+      content: "";
+      width: 26px;
+      height: 26px;
+      background-color: var(--accent);
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: 22px 22px;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      -webkit-mask-size: 22px 22px;
+      flex: 0 0 auto;
+    }
+
+    .icon-edu::before,
+    .icon-advantage::before {
+      width: 28px;
+      height: 28px;
+      mask-size: 24px 24px;
+      -webkit-mask-size: 24px 24px;
+    }
+
+    .icon-tags::before {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.59 13.41 11 23l-9-9V4h10z'/%3E%3Cpath d='M7 9h.01'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.59 13.41 11 23l-9-9V4h10z'/%3E%3Cpath d='M7 9h.01'/%3E%3C/svg%3E");
+    }
+
+    .icon-edu::before {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 9 10-5 10 5-10 5Z'/%3E%3Cpath d='M6 11.5v4.5c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 9 10-5 10 5-10 5Z'/%3E%3Cpath d='M6 11.5v4.5c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5'/%3E%3C/svg%3E");
+    }
+
+    .icon-advantage::before {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 2.8 5.7L21 9.6l-4.5 4.4 1.1 6.2L12 17.2 6.4 20.2l1.1-6.2L3 9.6l6.2-.9Z'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 2.8 5.7L21 9.6l-4.5 4.4 1.1 6.2L12 17.2 6.4 20.2l1.1-6.2L3 9.6l6.2-.9Z'/%3E%3C/svg%3E");
+    }
+
+    .icon-work::before {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='7' width='18' height='13' rx='2'/%3E%3Cpath d='M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/%3E%3Cpath d='M3 12h18'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='7' width='18' height='13' rx='2'/%3E%3Cpath d='M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/%3E%3Cpath d='M3 12h18'/%3E%3C/svg%3E");
+    }
+
+    .icon-project::before {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15V6a2 2 0 0 0-2-2h-5l-2-2H5a2 2 0 0 0-2 2v11'/%3E%3Crect x='3' y='9' width='18' height='11' rx='2'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15V6a2 2 0 0 0-2-2h-5l-2-2H5a2 2 0 0 0-2 2v11'/%3E%3Crect x='3' y='9' width='18' height='11' rx='2'/%3E%3C/svg%3E");
+    }
+
+    .icon-skill::before {
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='4' width='7' height='7' rx='1.5'/%3E%3Crect x='3' y='15' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='15' width='7' height='7' rx='1.5'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='4' width='7' height='7' rx='1.5'/%3E%3Crect x='3' y='15' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='15' width='7' height='7' rx='1.5'/%3E%3C/svg%3E");
+    }
+
+    .badge-list,
+    .skill-list,
+    .timeline-points,
+    .project-points,
+    .capability-points {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge-list li {
+      padding: 7px 10px;
+      border: 1px solid var(--panel-border);
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 999px;
+      font-size: 12px;
+      color: #40372d;
+    }
+
+    .skill-list li,
+    .capability-points li {
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(23, 21, 18, 0.10);
+      color: #342f29;
+      font-size: 14px;
+    }
+
+    .skill-list li:last-child,
+    .capability-points li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .education-card {
+      padding: 14px 14px 16px;
+      background: rgba(255, 255, 255, 0.46);
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+    }
+
+    .education-time {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .education-school {
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .education-major {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline-item + .timeline-item,
+    .project-item + .project-item {
+      margin-top: 26px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-head {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    .timeline-time {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 4px;
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: baseline;
+    }
+
+    .company {
+      font-family: "Palatino Linotype", "Book Antiqua", "Songti SC", serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .role {
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timeline-points li,
+    .project-points li {
+      position: relative;
+      padding-left: 16px;
+      margin-top: 8px;
+      color: #2f2a24;
+      font-size: 14px;
+    }
+
+    .timeline-points li::before,
+    .project-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-soft);
+    }
+
+    .project-head {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .project-side {
+      padding-top: 2px;
+    }
+
+    .project-company {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-company h3 {
+      margin: 0;
+      font-family: "Palatino Linotype", "Book Antiqua", "Songti SC", serif;
+      font-size: 26px;
+      line-height: 1.1;
+    }
+
+    .project-tag {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .project-content {
+      min-width: 0;
+    }
+
+    .point-title {
+      font-weight: 700;
+      color: #201c18;
+    }
+
+    .ability-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px 24px;
+    }
+
+    .ability-card {
+      padding: 18px 18px 16px;
+      border: 1px solid var(--panel-border);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.38));
+    }
+
+    .ability-card h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      font-family: "Palatino Linotype", "Book Antiqua", "Songti SC", serif;
+    }
+
+    @media (max-width: 960px) {
+      .resume {
+        width: min(100vw, 100%);
+        margin: 0;
+        padding: 0;
+      }
+
+      .sheet {
+        border: none;
+        box-shadow: none;
+      }
+
+      .topbar,
+      .sidebar,
+      .main {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .topbar,
+      .body-grid,
+      .timeline-head,
+      .project-head,
+      .ability-grid {
+        grid-template-columns: 1fr;
+        display: block;
+      }
+
+      .contacts {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .company,
+      .project-company h3 {
+        font-size: 22px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      html,
+      body {
+        background: #fff;
+      }
+
+      body::before {
+        display: none;
+      }
+
+      .resume {
+        width: auto;
+        margin: 0;
+        padding: 0;
+      }
+
+      .sheet {
+        box-shadow: none;
+        border: none;
+        background: #fff;
+      }
+
+      .sheet::before {
+        display: none;
+      }
+
+      .topbar,
+      .sidebar,
+      .main {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .topbar {
+        padding-top: 0;
+      }
+
+      .body-grid {
+        grid-template-columns: 68mm 1fr;
+      }
+
+      .sidebar {
+        padding-top: 24px;
+        padding-right: 22px;
+        padding-bottom: 0;
+        background: transparent;
+      }
+
+      .main {
+        padding-top: 24px;
+        padding-bottom: 0;
+      }
+
+      .timeline-item,
+      .project-item,
+      .ability-card,
+      .education-card,
+      .side-block {
+        break-inside: avoid;
+      }
+
+      .section {
+        break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body data-theme="blue">
+  <main class="resume">
+    <article class="sheet">
+      <header class="topbar">
+        <div class="identity">
+          <div class="eyebrow">Resume</div>
+          <h1>刘旭</h1>
+          <div class="headline">产品设计｜交互设计｜AI 驱动的全流程落地</div>
+          <p class="summary">
+            15 年设计相关工作经验，长期负责复杂业务中的产品体验设计、设计管理与跨团队协同。
+            近年借助 AI 持续扩展职能边界，形成从产品策划、交互与视觉设计到部分开发上线的独立推进能力，
+            擅长在高复杂度业务中完成 0-1 设计、增长验证与高质量落地。
+          </p>
+        </div>
+        <div class="contacts">
+          <div class="contact-item">
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">18600615730</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">liuxu0514@qq.com</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="body-grid">
+        <aside class="sidebar">
+          <section class="side-block">
+            <h2 class="side-title icon-tags">核心标签</h2>
+            <ul class="badge-list">
+              <li>产品设计</li>
+              <li>交互设计</li>
+              <li>设计管理</li>
+              <li>0-1 设计</li>
+              <li>AI 工作流</li>
+              <li>全流程落地</li>
+            </ul>
+          </section>
+
+          <section class="side-block">
+            <h2 class="side-title icon-edu">教育背景</h2>
+            <div class="education-card">
+              <div class="education-time">2006.09 — 2010.06</div>
+              <div class="education-school">北京邮电大学</div>
+              <div class="education-major">数字媒体艺术专业｜本科</div>
+            </div>
+          </section>
+
+          <section class="side-block">
+            <h2 class="side-title icon-advantage">职业优势</h2>
+            <ul class="skill-list">
+              <li>兼具产品理解、交互设计、视觉判断与一定工程落地能力。</li>
+              <li>能在成熟业务优化与新业务探索两类场景中快速切换。</li>
+              <li>具备团队管理经验，也保留一线设计与执行深度。</li>
+              <li>擅长把 AI 作为效率杠杆，而不是停留在工具层面。</li>
+            </ul>
+          </section>
+        </aside>
+
+        <section class="main">
+          <section class="section">
+            <h2 class="section-title icon-work">工作经历</h2>
+
+            <article class="timeline-item">
+              <div class="timeline-head">
+                <div class="timeline-time">2020.03 — 今</div>
+                <div>
+                  <div class="timeline-meta">
+                    <div class="company">北京花牛信息技术有限公司</div>
+                    <div class="role">产品设计师</div>
+                  </div>
+                  <ul class="timeline-points">
+                    <li>负责 NewsBreak 北京团队核心业务与探索性业务的产品体验设计，覆盖产品策划、用户端与管理后台设计，兼顾业务增长与体验落地。</li>
+                    <li>借助多种 AI 工具扩展职责边界，作为产品、交互、视觉与独立开发角色推动多个探索性业务落地，并搭建自动化系统提升研究、设计与运营效率。</li>
+                    <li>主导 0-1 项目 CrimeRadar 的产品设计与体验迭代，产品于 2025 年上线后快速完成冷启动并建立良好口碑，项目获公司 2025 年“年度之星”。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-head">
+                <div class="timeline-time">2017.05 — 2020.03</div>
+                <div>
+                  <div class="timeline-meta">
+                    <div class="company">美团</div>
+                    <div class="role">交互设计负责人</div>
+                  </div>
+                  <ul class="timeline-points">
+                    <li>带领 5 人交互设计团队，负责美团门票度假业务的整体交互设计、项目推进与质量把控。</li>
+                    <li>统筹整个设计团队的招聘、培养、绩效与日常管理，推动设计规范和协作机制建设，提升团队输出稳定性与跨部门协作效率。</li>
+                    <li>发起竞品追踪、读书会、数据学习等项目，提升团队业务认知及通用能力。</li>
+                    <li>主导的美团云排队、美团门票小程序项目分别获 2018、2019 年度假事业部年度优秀项目；个人申请设计专利 10 余项，获“专利达人”称号。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-head">
+                <div class="timeline-time">2015.11 — 2017.05</div>
+                <div>
+                  <div class="timeline-meta">
+                    <div class="company">一起作业网</div>
+                    <div class="role">交互设计负责人</div>
+                  </div>
+                  <ul class="timeline-points">
+                    <li>从零搭建交互设计团队，负责公司全线业务的交互设计与团队管理工作。</li>
+                    <li>建立需求评审、任务分配、进度管理和质量控制机制，推动设计规范与协作流程落地，提升多团队协同效率与整体用户体验一致性。</li>
+                    <li>通过分享机制与成长计划建设，持续提升整个产品团队的设计、用研能力。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-head">
+                <div class="timeline-time">2014.08 — 2015.11</div>
+                <div>
+                  <div class="timeline-meta">
+                    <div class="company">优酷土豆</div>
+                    <div class="role">移动设计负责人</div>
+                  </div>
+                  <ul class="timeline-points">
+                    <li>独立负责来疯互动直播秀手机客户端的交互设计工作，并承担移动项目线的设计统筹与质量把控。</li>
+                    <li>制定并推动设计规范在视觉与开发环节的落地，提升客户端设计输出的一致性与可执行性。</li>
+                    <li>参与团队招聘评估，支持设计人才的筛选与判断。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-head">
+                <div class="timeline-time">2011.04 — 2014.08</div>
+                <div>
+                  <div class="timeline-meta">
+                    <div class="company">网易</div>
+                    <div class="role">高级交互设计师</div>
+                  </div>
+                  <ul class="timeline-points">
+                    <li>担任网易新闻客户端主交互设计师，参与多款网易移动产品的交互设计与体验优化。</li>
+                    <li>作为 2014 年世界杯专题设计线负责人，统筹交互、视觉、动效等多角色协作，保障重点项目设计质量与落地节奏。</li>
+                    <li>同时参与团队管理、设计规范建设与新人培养，连续获得 2012、2013 年度移动事业部优秀员工称号。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-head">
+                <div class="timeline-time">2010.07 — 2011.04</div>
+                <div>
+                  <div class="timeline-meta">
+                    <div class="company">汉王科技</div>
+                    <div class="role">交互设计师</div>
+                  </div>
+                  <ul class="timeline-points">
+                    <li>负责多类软硬件产品的界面布局与交互流程设计，参与考勤设备、平板电脑、电纸书及绘画软件等项目。</li>
+                    <li>在早期工作阶段积累了跨终端产品的交互设计经验，建立了对复杂功能结构与操作流程的基础理解。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="section section-spacious">
+            <h2 class="section-title icon-project">重点项目</h2>
+
+            <article class="project-item">
+              <div class="project-head">
+                <div class="project-side">
+                  <div class="project-company">
+                    <h3>花牛</h3>
+                  </div>
+                  <div class="project-tag">Core / 0-1 / AI</div>
+                </div>
+                <div class="project-content">
+                  <ul class="project-points">
+                    <li><span class="point-title">NewsBreak：</span>公司核心产品，长期位居北美新闻资讯类应用榜单前列。负责基础体验迭代与新业务设计，参与搭建的新闻、视频等核心框架被持续沿用，并推动 Safety、UGC 等探索方向孵化为独立应用。</li>
+                    <li><span class="point-title">CrimeRadar：</span>从 NewsBreak 中拆分出的独立应用。负责项目 0-1 设计与多轮体验优化，产品于 2025 年上线后快速增长，半年达到 31 万 DAU、82 万 WAU。</li>
+                    <li><span class="point-title">新业务探索：</span>借助 AI 快速完成多赛道产品验证，覆盖圣经内容、本地生活、用户 UGC、医疗健康、游戏等多个方向，全流程 AI 参与，最快 2 天发布一个新应用，并形成“投流/买量-产品迭代”的高效验证闭环。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item">
+              <div class="project-head">
+                <div class="project-side">
+                  <div class="project-company">
+                    <h3>美团</h3>
+                  </div>
+                  <div class="project-tag">Traffic / Conversion / Service</div>
+                </div>
+                <div class="project-content">
+                  <ul class="project-points">
+                    <li><span class="point-title">周边游/旅游频道改版：</span>负责门票度假业务核心流量分发页面优化，通过持续迭代提升用户浏览与转化表现。</li>
+                    <li><span class="point-title">门票全流程体验优化：</span>基于转化漏斗分析关键环节问题，通过对比实验提升体验流畅度及转化率。</li>
+                    <li><span class="point-title">新流量建设：</span>通过内容与玩法建设，开拓更多门票度假业务流量场景。</li>
+                    <li><span class="point-title">景评项目：</span>结合景区实地体验与用户评价分析，为商家提供运营策略优化，提升游览体验与游客口碑。</li>
+                    <li><span class="point-title">西安博物院在线购票系统：</span>为合作景区定制官网、官微在线售票能力。</li>
+                    <li><span class="point-title">美团云排队：</span>通过多平台结合为游客提供在线排队功能，优化游览时间利用率，项目获 2018 年度假事业部年度优秀项目。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item">
+              <div class="project-head">
+                <div class="project-side">
+                  <div class="project-company">
+                    <h3>一起作业</h3>
+                  </div>
+                  <div class="project-tag">Multi-End</div>
+                </div>
+                <div class="project-content">
+                  <ul class="project-points">
+                    <li><span class="point-title">老师端 / 学生端 / 家长端：</span>设计三端的 PC 与 App 业务框架、核心流程及交互体验，覆盖作业布置、批改、学习反馈、扩展学习与增值服务，形成完整业务闭环。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item">
+              <div class="project-head">
+                <div class="project-side">
+                  <div class="project-company">
+                    <h3>优酷土豆</h3>
+                  </div>
+                  <div class="project-tag">Mobile Live</div>
+                </div>
+                <div class="project-content">
+                  <ul class="project-points">
+                    <li><span class="point-title">来疯直播秀 App：</span>在直播产品以 Web 端为主的阶段完成 0-1 客户端搭建，设计并推动粒子系统、多层帧动画播放系统在移动端落地，实现较早的复杂礼物动画展现，提升直播互动氛围与用户感知。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item">
+              <div class="project-head">
+                <div class="project-side">
+                  <div class="project-company">
+                    <h3>网易</h3>
+                  </div>
+                  <div class="project-tag">Editorial Product</div>
+                </div>
+                <div class="project-content">
+                  <ul class="project-points">
+                    <li><span class="point-title">网易新闻客户端：</span>负责 iPhone、iPad、Android、Windows Phone、Win8 等多平台交互设计。</li>
+                    <li><span class="point-title">2014 世界杯专题：</span>设计从开场动画直连频道右下角悬浮球的交互体验，显著提升世界杯频道的用户感知和访问率。</li>
+                    <li><span class="point-title">网易应用 / 网易读图 / 微镜头：</span>主导相关产品交互设计，并作为项目负责人带队完成“微镜头”，获网易移动事业部创新大赛一等奖。</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="section section-spacious">
+            <h2 class="section-title icon-skill">能力模型</h2>
+            <div class="ability-grid">
+              <article class="ability-card">
+                <h3>AI 使用</h3>
+                <ul class="capability-points">
+                  <li>熟悉主流 AI 模型与工具的能力边界，能够结合具体场景完成工具选型，并转化为实际业务价值。</li>
+                  <li>能将 AI Studio、Stitch、Vibe Coding、OpenClaw 等工具串联进产品设计与开发流程，做到 1~2 天开发一款具备良好体验和完整功能的应用，显著提升研究、设计与 MVP 验证效率。</li>
+                  <li>已形成一套借助 AI 进行学习、研究和跨职能协作的方法，具备从产品策划到开发上线的独立推进能力。</li>
+                </ul>
+              </article>
+
+              <article class="ability-card">
+                <h3>团队管理</h3>
+                <ul class="capability-points">
+                  <li>系统接受过管理课程训练，具备团队管理的基础方法论与实践经验。</li>
+                  <li>长期承担团队管理相关工作，熟悉招聘、培养、目标管理、绩效反馈及团队协作等环节。</li>
+                  <li>能根据交互、视觉、用研等不同方向及阶段特征制定成长计划，并匹配相应的管理方式。</li>
+                </ul>
+              </article>
+
+              <article class="ability-card">
+                <h3>专业能力</h3>
+                <ul class="capability-points">
+                  <li>精通 Figma、Sketch、Axure 等设计工具，输出结构清晰、可落地的交互设计方案。</li>
+                  <li>熟悉从需求分析、场景拆解到方案设计、效果验证、项目复盘的完整产品设计流程，可独立推进，也可带团队协作完成复杂项目。</li>
+                  <li>具备较强的业务理解、用户视角与方法沉淀能力，能够在兼顾业务目标的前提下持续优化用户体验。</li>
+                </ul>
+              </article>
+
+              <article class="ability-card">
+                <h3>通用能力</h3>
+                <ul class="capability-points">
+                  <li>具备较强的多项目并行推进能力，能够在复杂协作环境中保持高质量输出。</li>
+                  <li>拥有良好的产品思维与协作意识，能够主动发现问题并推动方案完善。</li>
+                  <li>学习与复盘习惯稳定，具备较强的沟通表达和跨团队协同能力。</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+        </section>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
