@@ -485,6 +485,54 @@
       min-width: 0;
     }
 
+    .project-groups {
+      display: grid;
+      gap: 22px;
+    }
+
+    .project-group {
+      padding: 0;
+    }
+
+    .project-group-title {
+      margin: 0 0 8px;
+      font-family: "PingFang SC", "Hiragino Sans GB", sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #201c18;
+      margin-left: -4px;
+    }
+
+    .project-subpoints {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .project-subpoints li {
+      position: relative;
+      padding-left: 18px;
+      margin-top: 8px;
+      color: #2f2a24;
+      font-size: 14px;
+    }
+
+    .project-subpoints li:first-child {
+      margin-top: 0;
+    }
+
+    .project-subpoints li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-soft);
+    }
+
     .point-title {
       font-weight: 700;
       color: #201c18;
@@ -816,16 +864,78 @@
               <div class="project-head">
                 <div class="project-side">
                   <div class="project-company">
+                    <h3>AI+</h3>
+                  </div>
+                  <div class="project-tag">Workflow / Efficiency / Dev</div>
+                </div>
+                <div class="project-content">
+                  <div class="project-groups">
+                    <section class="project-group">
+                      <h4 class="project-group-title">重构设计与验证流程</h4>
+                      <ul class="project-subpoints">
+                        <li>打破传统“产品需求 → 设计方案 → 讨论评估”的链路，借助 AI 工具直接将产品 ideas 快速转化为具备真实内容与完整流程的程序 demo，通过真实使用验证需求、收敛方案。</li>
+                        <li>个人项目可以由 AI 生成设计稿或者直接进入开发，并在开发过程中同步优化体验，极大压缩中间流程，实现 1~2 天内从 0 到 1 完成一个需求或应用开发。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">提升设计与运营效率</h4>
+                      <ul class="project-subpoints">
+                        <li>将“交互设计 → 视觉设计”流程升级为“Stitch 多方案生成与筛选 → Figma 细节调整”，直接输出高质量视觉方案，显著降低人力与沟通成本，设计效率提升 3~5 倍。</li>
+                        <li>基于 OpenClaw 搭建自动化运营系统，实现每小时生成 100+ 应用引导图，并自动完成素材投放、数据检测与方案优化，基本实现 0 人工干预，显著节省设计与投放成本。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">扩展个人能力边界</h4>
+                      <ul class="project-subpoints">
+                        <li>借助 Vibe Coding 等工具，将个人角色从设计师扩展到独立开发者，能够独立完成从产品需求、设计到开发上线与效果验证的完整闭环。</li>
+                        <li>累计开发 10+ 应用 demo，推动其中 5 款应用上线。</li>
+                        <li>独立完成习惯助手 TinyShift 和账单分析 BillGuard 的前后端开发及上线，属于公司较早探索付费模式的一批应用。</li>
+                        <li>另开发 10+ 游戏 demo，其中 6 款游戏已在 NewsBreak 内上线，单款游戏用户日均时长超过 30 分钟。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">赋能日常工作与生活</h4>
+                      <ul class="project-subpoints">
+                        <li>基于 OpenClaw 开发多个 Skills，用于记录产品灵感、自动检索与研究内容、总结讨论结论、提升阅读效果等，持续提升日常工作与生活效率。</li>
+                        <li>同时利用业余时间开发面向家长和孩子的 AI 通识与使用课程，用于自媒体方向探索。</li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-item">
+              <div class="project-head">
+                <div class="project-side">
+                  <div class="project-company">
                     <h3>花牛</h3>
                   </div>
                   <div class="project-tag">Core / 0-1 / AI</div>
                 </div>
                 <div class="project-content">
-                  <ul class="project-points">
-                    <li><span class="point-title">NewsBreak：</span>公司核心产品，长期位居北美新闻资讯类应用榜单前列。负责该产品的基础体验迭代与新业务设计，参与搭建的新闻、视频等核心框架被持续沿用，并推动 Safety、UGC 等探索方向孵化为独立应用。</li>
-                    <li><span class="point-title">CrimeRadar：</span>从 NewsBreak 中拆分出来作为独立应用。负责项目 0-1 设计与多轮体验优化，为产品打造独立的设计体系及更符合用户场景的使用体验。</li>
-                    <li><span class="point-title">新业务探索：</span>借助 AI 快速完成多赛道产品验证，覆盖圣经内容、本地生活服务、用户 UGC、医疗健康、游戏等多个方向，全流程 AI 参与，最快 2 天发布一个新应用，并探索出了一套完备高效的“投流/买量-产品迭代”的新应用验证闭环。在项目中深度参与了产品需求策划、交互视觉设计、前后端开发、内容/投放运营等全流程环节，并有多个应用 / 游戏为独立策划开发并推动上线。</li>
-                  </ul>
+                  <div class="project-groups">
+                    <section class="project-group">
+                      <h4 class="project-group-title">NewsBreak</h4>
+                      <ul class="project-subpoints">
+                        <li>公司核心产品，长期位居北美新闻资讯类应用榜单前列。</li>
+                        <li>负责该产品的基础体验迭代与新业务设计，参与搭建的新闻、视频等核心框架被持续沿用，并推动 Safety、UGC 等探索方向孵化为独立应用。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">CrimeRadar</h4>
+                      <ul class="project-subpoints">
+                        <li>从 NewsBreak 中拆分出来作为独立应用。负责项目 0-1 设计与多轮体验优化，为产品打造独立的设计体系及更符合用户场景的使用体验。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">新业务探索</h4>
+                      <ul class="project-subpoints">
+                        <li>借助 AI 快速完成多赛道产品验证，覆盖圣经内容、本地生活服务、用户 UGC、医疗健康、游戏等多个方向，全流程 AI 参与，最快 2 天发布一个新应用，并探索出了一套完备高效的“投流/买量-产品迭代”的新应用验证闭环。</li>
+                        <li>在项目中深度参与了产品需求策划、交互视觉设计、前后端开发、内容/投放运营等全流程环节，并有多个应用 / 游戏为独立策划开发并推动上线。</li>
+                      </ul>
+                    </section>
+                  </div>
                 </div>
               </div>
             </article>
@@ -839,14 +949,44 @@
                   <div class="project-tag">Traffic / Conversion / Service</div>
                 </div>
                 <div class="project-content">
-                  <ul class="project-points">
-                    <li><span class="point-title">周边游/旅游频道改版：</span>美团⻔票度假业务核⼼流量分发⻚⾯，通过持续的优化探索，获得用户浏览及转化数据提升。</li>
-                    <li><span class="point-title">美团⻔票全流程基础体验优化：</span>基于转化漏斗，分析每个环节的转化问题并设计提升方案，通过细致的对比实验，提升⽤户体验流畅度及转化率。</li>
-                    <li><span class="point-title">美团⻔票新流量建设：</span>通过内容、玩法建设开拓更多流量场景。</li>
-                    <li><span class="point-title">美团⻔票商家 - 景评项⽬：</span>实际体验商家的景区服务，并结合⽤户评价分析为景区提供运营策略优化，提升用户的游览体验，并帮助商家获得更好的游客口碑和游客流量。</li>
-                    <li><span class="point-title">美团合作景区 - ⻄安博物院在线购票系统：</span>为景区定制官⽹官微在线售票能⼒。</li>
-                    <li><span class="point-title">美团云排队 - </span>多平台结合，为游客提供在线排队功能，复用游览时间，获得更好的游览体验。该项目获得 2018 年度度假事业部年度优秀项⽬。</li>
-                  </ul>
+                  <div class="project-groups">
+                    <section class="project-group">
+                      <h4 class="project-group-title">周边游/旅游频道改版</h4>
+                      <ul class="project-subpoints">
+                        <li>美团⻔票度假业务核⼼流量分发⻚⾯，通过持续的优化探索，获得用户浏览及转化数据提升。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">美团⻔票全流程基础体验优化</h4>
+                      <ul class="project-subpoints">
+                        <li>基于转化漏斗，分析每个环节的转化问题并设计提升方案，通过细致的对比实验，提升⽤户体验流畅度及转化率。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">美团⻔票新流量建设</h4>
+                      <ul class="project-subpoints">
+                        <li>通过内容、玩法建设开拓更多流量场景。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">美团⻔票商家 - 景评项⽬</h4>
+                      <ul class="project-subpoints">
+                        <li>实际体验商家的景区服务，并结合⽤户评价分析为景区提供运营策略优化，提升用户的游览体验，并帮助商家获得更好的游客口碑和游客流量。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">美团合作景区 - ⻄安博物院在线购票系统</h4>
+                      <ul class="project-subpoints">
+                        <li>为景区定制官⽹官微在线售票能⼒。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">美团云排队</h4>
+                      <ul class="project-subpoints">
+                        <li>多平台结合，为游客提供在线排队功能，复用游览时间，获得更好的游览体验。该项目获得2018年度度假事业部年度优秀项⽬。</li>
+                      </ul>
+                    </section>
+                  </div>
                 </div>
               </div>
             </article>
@@ -860,9 +1000,15 @@
                   <div class="project-tag">Multi-End</div>
                 </div>
                 <div class="project-content">
-                  <ul class="project-points">
-                    <li><span class="point-title">⼀起作业⽼师端、学生端、家长端：</span>设计三端的 PC & App 业务框架、核心流程及交互体验——老师端布置、批改作业，查看汇总数据和单个学生数据；学生端完成作业，并进行扩展学习；家长端查看孩子的学习情况报告，并可为孩子购买课外学习服务。三端配合完成完整的业务及增值服务闭环，拥有良好的整体体验一致性与业务承接效率。</li>
-                  </ul>
+                  <div class="project-groups">
+                    <section class="project-group">
+                      <h4 class="project-group-title">⼀起作业⽼师端、学生端、家长端</h4>
+                      <ul class="project-subpoints">
+                        <li>设计三端的 PC & App 业务框架、核心流程及交互体验——老师端布置、批改作业，查看汇总数据和单个学生数据；学生端完成作业，并进行扩展学习；家长端查看孩子的学习情况报告，并可为孩子购买课外学习服务。</li>
+                        <li>三端配合完成完整的业务及增值服务闭环，拥有良好的整体体验一致性与业务承接效率。</li>
+                      </ul>
+                    </section>
+                  </div>
                 </div>
               </div>
             </article>
@@ -876,9 +1022,15 @@
                   <div class="project-tag">Mobile Live</div>
                 </div>
                 <div class="project-content">
-                  <ul class="project-points">
-                    <li><span class="point-title">来疯直播秀 APP：</span>在直播产品以 web 端为主的阶段，完成 0-1 的客户端搭建，设计并推动粒子系统、多层帧动画播放系统在移动端落地，实现了较早的复杂礼物动画在移动客户端中的展现，提升直播互动氛围与用户感知。</li>
-                  </ul>
+                  <div class="project-groups">
+                    <section class="project-group">
+                      <h4 class="project-group-title">来疯直播秀APP</h4>
+                      <ul class="project-subpoints">
+                        <li>在直播产品以 web 端为主的阶段，完成 0-1 的移动客户端搭建。</li>
+                        <li>设计并推动粒子系统、多层帧动画播放系统在移动端落地，实现了较早的复杂礼物动画在移动客户端中的展现，提升直播互动氛围与用户感知。</li>
+                      </ul>
+                    </section>
+                  </div>
                 </div>
               </div>
             </article>
@@ -892,11 +1044,28 @@
                   <div class="project-tag">Editorial Product</div>
                 </div>
                 <div class="project-content">
-                  <ul class="project-points">
-                    <li><span class="point-title">⽹易新闻客户端：</span>iPhone、iPad、Android、Windows phone、Win8 等多平台交互设计。</li>
-                    <li><span class="point-title">网易新闻客户端 2014 世界杯专题：</span>设计了世界杯专题完整的信息结构框架，创造了右下角宣浮球的创新体验，显著提升了世界杯频道的用户感知和访问率。</li>
-                    <li><span class="point-title">⽹易应⽤ / ⽹易读图 / 微镜头：</span>主导各产品交互设计工作，带队完成“微镜头”创新项目，并获得网易移动事业部创新大赛一等奖。</li>
-                  </ul>
+                  <div class="project-groups">
+                    <section class="project-group">
+                      <h4 class="project-group-title">⽹易新闻客户端</h4>
+                      <ul class="project-subpoints">
+                        <li>iPhone、iPad、Android、Windows phone、Win8 等多平台交互设计。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">网易新闻客户端 2014 世界杯专题</h4>
+                      <ul class="project-subpoints">
+                        <li>设计了世界杯专题完整的信息结构框架，该框架在后续大型赛事专题中一直被沿用。</li>
+                        <li>设计了右下角宣浮足球的创新体验，解决了多入口无法有效展示的问题，并通过与开屏动画的联动，显著提升了世界杯频道的用户感知和访问率。</li>
+                      </ul>
+                    </section>
+                    <section class="project-group">
+                      <h4 class="project-group-title">⽹易应⽤/⽹易读图/微镜头</h4>
+                      <ul class="project-subpoints">
+                        <li>主导移动团队各探索产品交互设计工作。</li>
+                        <li>带队完成“微镜头”创新项目，并获得网易移动事业部创新大赛一等奖。</li>
+                      </ul>
+                    </section>
+                  </div>
                 </div>
               </div>
             </article>
